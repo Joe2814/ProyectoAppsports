@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Escuela Deportiva</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+          crossorigin="anonymous">
+</head>
+<body>
+<h1 th:text="${idusuario}"></h1>
+<div class="col-12">
+    <div class="card recent-sales overflow-auto container d-flex justify-content-between">
+        <div class="filter">
+            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                    <h6>Filter</h6>
+                </li>
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nuestros compañeros!! <span>| Llévense bien</span></h5>
+            <table class="table table-borderless datatable">
+                <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Correo</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="estudiante : ${estudiantes}">
+                    <td th:text="${estudiante.nombre}">Nombre</td>
+                    <td th:text="${estudiante.apellido}">Apellido</td>
+                    <td th:text="${estudiante.edad}">Edad</td>
+                    <td th:text="${estudiante.correo}">Correo</td>
+                    <td><span class="badge bg-success">Asistió</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- End Recent Sales -->
+
+<section class="page-section" id="contact">
+    <div class="container">
+        <!-- Sección de Horario -->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Horario</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7">
+                <div class="row">
+                    <div class="col-lg-4 ms-auto">
+                        Lunes: Entrenamiento de fundamentos (dribling y pases) --> 9:00 am a 10:00 am
+                    </div>
+                    <div class="col-lg-4 me-auto">
+                        Martes: Sesión de tiro y estrategias --> 4:00 pm a 6:00 pm
+                    </div>
+                    <div class="col-lg-4 ms-auto">
+                        Miércoles: Entrenamiento de defensa y rebotes --> 6:00 pm a 8:00 pm
+                    </div>
+                    <div class="col-lg-4 me-auto">
+                        Jueves: Ejercicios de velocidad y agilidad --> 3:00 pm a 5:00 pm
+                    </div>
+                    <div class="col-lg-4 me-auto">
+                        Viernes: Partido amistoso y práctica en equipo --> 10:00 am a 12:00 pm
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer text-center">
+    <div class="container">
+        <div class="row">
+            <!-- Sección de salida -->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">¿Deseas irte?</h4>
+                <p class="lead mb-0">
+                    Qué desafortunado escuchar esto<br>
+                    Lo sentimos por no cumplir con tus expectativas
+                </p>
+            </div>
+            <!-- Sección de cancelación de matrícula -->
+            <div class="col-lg-4">
+                <h4 class="text-uppercase mb-4">Nos veremos después</h4>
+                <p class="lead mb-0">
+                    Estaremos mejorando para volver a verte :D<br>
+                    <a th:href="@{/escuela/} +${idusuario}">
+                        <button class="btn btn-dark">Cancelar matrícula</button>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
