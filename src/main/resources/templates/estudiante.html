@@ -1,0 +1,23 @@
+<!-- src/main/resources/templates/estudiante.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Estudiante</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="text-center py-5">
+
+<h1 class="mb-4">Menú Estudiante</h1>
+<div class="d-grid gap-3 d-sm-flex justify-content-center">
+    <a th:href="@{/escuela/estudiante/registro}">
+        <button class="btn btn-primary btn-lg">Registrarse</button>
+    </a>
+    <!-- Aquí cambiamos la ruta para que llame a /programar -->
+    <a th:href="@{/escuela/estudiante/programar}">
+        <button class="btn btn-secondary btn-lg">Programar Asistencia</button>
+    </a>
+</div>
+
+</body>
+</html>

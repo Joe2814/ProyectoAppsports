@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Profesor – Escuela Deportiva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/escuela}">Escuela Deportiva</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" th:href="@{/escuela/login}">
+                    <button class="btn btn-outline-light btn-sm">Login</button></a></li>
+                <li class="nav-item ms-2"><a class="nav-link" th:href="@{/escuela/registro}">
+                    <button class="btn btn-outline-light btn-sm">Register</button></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-5 mb-3">Bienvenido, Profesor</h1>
+        <p class="lead mb-4">Desde aquí puedes gestionar usuarios y horarios</p>
+        <div class="d-grid gap-3 d-sm-flex justify-content-center">
+            <a th:href="@{/escuela/profesor/listar-usuarios}">
+                <button class="btn btn-light btn-lg">Listar Usuarios</button>
+            </a>
+            <a th:href="@{/escuela/profesor/organizar-horarios}">
+                <button class="btn btn-outline-light btn-lg">Organizar Horarios</button>
+            </a>
+        </div>
+    </div>
+</header>
+
+<footer class="bg-light text-center py-3">
+    <small class="text-muted">&copy; Escuela Deportiva 2025</small>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

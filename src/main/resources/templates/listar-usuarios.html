@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar Usuarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-5">
+    <h2 class="mb-4">Lista de Estudiantes</h2>
+    <table class="table table-striped">
+        <thead><tr><th>ID</th><th>Nombre</th><th>Correo</th></tr></thead>
+        <tbody>
+        <tr th:each="e : ${estudiantes}">
+            <td th:text="${e.id}"></td>
+            <td th:text="${e.nombre}"></td>
+            <td th:text="${e.correo}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/escuela/profesor}" class="btn btn-secondary mt-3">Volver</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

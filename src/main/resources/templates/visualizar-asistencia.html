@@ -1,0 +1,35 @@
+<!-- src/main/resources/templates/visualizar-asistencia.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Tu Horario de Asistencia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="py-5">
+<div class="container">
+  <h2 class="mb-4 text-center">Horario para tus días seleccionados</h2>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Día</th>
+      <th>Actividad</th>
+      <th>Inicio</th>
+      <th>Fin</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="h : ${horarios}">
+      <td th:text="${h.dia}"></td>
+      <td th:text="${h.actividad}"></td>
+      <td th:text="${h.inicio}"></td>
+      <td th:text="${h.fin}"></td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="text-center mt-4">
+    <a th:href="@{/escuela}" class="btn btn-secondary">Volver al Inicio</a>
+  </div>
+</div>
+</body>
+</html>

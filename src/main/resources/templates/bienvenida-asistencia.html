@@ -1,0 +1,23 @@
+<!-- src/main/resources/templates/bienvenida-asistencia.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Asistencia Programada</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="text-center py-5">
+
+<div class="container">
+  <h1 class="mb-4">¡Listo!</h1>
+  <p class="lead mb-4">
+    Has programado tu asistencia para los siguientes días:
+  </p>
+  <ul class="list-group mb-4">
+    <li class="list-group-item" th:each="d : ${dias}" th:text="${d}"></li>
+  </ul>
+  <a th:href="@{/escuela}" class="btn btn-secondary">Volver al Inicio</a>
+</div>
+
+</body>
+</html>
